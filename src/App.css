@@ -1,0 +1,108 @@
+/* src/App.css */
+
+/* --- GLOBAL & FONT SETUP --- */
+body {
+  margin: 0;
+  font-family: "Bogle", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: #f7f8fa; /* A softer, more professional background */
+  color: #1e1e1e;
+}
+
+/* --- LAYOUT STRUCTURE --- */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.header {
+  padding: 20px;
+  background-color: white;
+  border-bottom: 1px solid #E1E1E1;
+  text-align: center;
+}
+
+.main-content {
+  flex-grow: 1;
+  display: flex;
+  width: 100%;
+  padding: 20px;
+  gap: 20px;
+}
+
+.view-panel {
+  flex: 1;
+  padding: 24px;
+  background: white;
+  border: 1px solid #E1E1E1;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  position: relative;
+  transition: box-shadow 0.3s ease;
+}
+.view-panel:hover {
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+
+/* --- CHECKOUT FORM STYLES (FROM BEFORE - STILL GOOD) --- */
+.checkout-form { max-width: 400px; margin: 20px auto; }
+.form-group { margin-bottom: 16px; }
+.form-group label { display: block; font-weight: bold; margin-bottom: 8px; color: #333; }
+.form-group input { width: 100%; padding: 12px; border: 1px solid #CCCCCC; border-radius: 8px; font-size: 16px; box-sizing: border-box; }
+.form-group input:focus { outline: none; border-color: #0071CE; box-shadow: 0 0 0 2px rgba(0, 113, 206, 0.2); }
+.payment-button { width: 100%; padding: 15px; font-size: 16px; font-weight: bold; color: white; background-color: #0071CE; border: none; border-radius: 8px; cursor: pointer; }
+
+
+/* --- DYNAMIC THREAT DASHBOARD STYLES --- */
+.threat-dashboard-container { /* Note the new class name */
+  padding: 0 20px 20px 20px; /* Match the padding of main-content */
+}
+.threat-dashboard {
+  background-color: #0d1117;
+  color: #c9d1d9;
+  padding: 24px;
+  font-family: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
+  border-radius: 12px;
+  border: 1px solid #30363d;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+}
+.threat-dashboard h2 {
+  color: #58a6ff;
+  border-bottom: 1px solid #30363d;
+  padding-bottom: 10px;
+  margin-top: 0;
+  font-size: 18px;
+}
+.dashboard-line {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  min-height: 24px; /* Prevent layout shift while typing */
+}
+.line-label {
+  color: #8b949e;
+  width: 180px;
+  flex-shrink: 0;
+}
+.blinking-cursor {
+  animation: blink 1s step-end infinite;
+  margin-left: 2px;
+}
+@keyframes blink {
+  from, to { color: transparent }
+  50% { color: #58a6ff; }
+}
+.pulse-green {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: #238636;
+  border-radius: 50%;
+  margin-right: 8px;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(35, 134, 54, 0.7); }
+  70% { box-shadow: 0 0 0 10px rgba(35, 134, 54, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(35, 134, 54, 0); }
+}
